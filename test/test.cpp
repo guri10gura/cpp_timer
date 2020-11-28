@@ -2,6 +2,7 @@
 #include <signal.h>
 #include "gtest/gtest.h"
 #include "timer.hpp"
+#include "wait_lock.h"
 
 std::mutex mtx;
 std::condition_variable cv;
@@ -11,6 +12,7 @@ std::timed_mutex tmtx;
 bool is_called_func1 = false;
 bool is_called_func2 = false;
 bool isReady = false;
+
 
 void test_func1(){
     is_called_func1 = true;
